@@ -1,0 +1,39 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrains Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11px;
+    color: white;
+}
+
+window#waybar {
+    background-color: rgba(128, 128, 128, 0.4);
+
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+.modules-left > *,
+.modules-center > *,
+.modules-right > * {
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#workspaces button {
+  min-width: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#clock,
+#custom-power {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
