@@ -1,0 +1,26 @@
+
+* {
+    font-size: 13px;
+    font-family: "Jetbrains Mono";
+    color: white;
+    background-color: #1A1A26;
+}
+
+window {
+  background-color: transparent;
+}
+
+#outer-box {
+  background-color: #1A1A26;
+  border: none;
+  border-radius: 10px;
+}
+
+#input {
+    border: 1px solid white;
+}
+
+#entry:selected #text {
+    background-color: #FF87AF;
+    font-weight: bold;
+}
