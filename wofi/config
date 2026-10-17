@@ -1,0 +1,5 @@
+location=bottom_right
+show=drun
+width=35%
+height=60%
+prompt=Search...
