@@ -2,14 +2,18 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrains Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 11px;
+    font-weight: 600;
     color: white;
 }
 
 window#waybar {
-    background-color: rgba(128, 128, 128, 0.4);
+    margin-top: 0px;
+    margin-bottom: 0px;
 
-    border: 1px solid white;
-    border-radius: 5px;
+    background-color: rgba(26, 26, 38, 1);
+
+    border: 0px solid white;
+    border-radius: 10px;
 }
 
 window#waybar.hidden {
@@ -32,7 +36,7 @@ window#waybar.hidden {
   padding-right: 0;
 }
 
-#clock,
+#custom-notification,
 #custom-power {
     margin-top: 10px;
     margin-bottom: 10px;
