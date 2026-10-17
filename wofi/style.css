@@ -3,18 +3,18 @@
     font-size: 13px;
     font-family: "Jetbrains Mono";
     color: white;
-    background-color: #1A1A26;
+    background-color: #2c2c42;
 }
 
 window {
-  background-color: transparent;
+    background-color: transparent;
+    border: none;
 }
 
 #outer-box {
-  background-color: #1A1A26;
-  padding: 5px;
-  border: none;
-  border-radius: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
 }
 
 #input {
