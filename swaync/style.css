@@ -1,0 +1,28 @@
+
+* {
+    font-family: "Jetbrains Mono";
+}
+
+/* Notification pop-ups */
+.notification-window {
+}
+
+.notification {
+    background-color: #FF87AF;
+    border: none;
+    border-radius: 7px;
+}
+
+/* Slide-out control center */
+.control-center {
+    margin: 7px;
+    background-color: #1A1A26;
+    border: 0px solid #89b4fa;
+    border-radius: 10px;
+}
+
+.control-center .notification-background {
+    background-color: #1A1A26;
+    border: none;
+}
+
