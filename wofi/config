@@ -2,4 +2,7 @@ location=bottom_right
 show=drun
 width=35%
 height=60%
+xoffset=-25
+yoffset=-25
 prompt=Search...
+
