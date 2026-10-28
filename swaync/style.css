@@ -26,3 +26,11 @@
     border: none;
 }
 
+.notification-row:hover .notification {
+    background-color: #FF87AF;
+}
+
+.notification-default-action:hover {
+    background-color: #FF87AF;
+}
+
