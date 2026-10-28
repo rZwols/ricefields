@@ -35,9 +35,9 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal             = "kitty"
-local fileManager          = "dolphin"
+local fileManager          = "thunar"
 local menu                 = "wofi --show drun"
-local battery_notification = "batsignal -b -w 40 -c 20 -d 10 -f 80 -p -P 'Charging...'"
+local battery_notification = "batsignal -b -w 40 -c 20 -d 10"
 
 -------------------
 ---- AUTOSTART ----
@@ -52,7 +52,10 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("hyprsunset")
     hl.exec_cmd(battery_notification)
+    hl.exec_cmd("hyprctl setcursor Sweet-cursors 24")
+    hl.exec_cmd("kitty -- ink /home/rzwols/menu/daily.md")
 end)
 
 
@@ -268,23 +271,34 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(ttyFileExplorer))
 
-local closeWindowBind = hl.bind(mainMod .. " + BACKSPACE", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
+hl.bind(mainMod .. " + BACKSPACE", hl.dsp.window.close())
 hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+hl.bind(mainMod .. " + T", hl.dsp.layout("togglesplit")) -- dwindle only
 
 hl.bind(mainMod .. " + W", hl.dsp.exec_cmd("pkill -SIGUSR1 waybar"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
--- Move focus with mainMod + arrow keys
+-- Directional focus (vim keys)
+hl.bind(mainMod .. " + h", hl.dsp.focus({ direction = "left" }))
+hl.bind(mainMod .. " + j", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + k", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + l", hl.dsp.focus({ direction = "right" }))
+
+-- Arrow keys (alternative)
 hl.bind(mainMod .. " + left", hl.dsp.focus({ direction = "left" }))
-hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
-hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down", hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + up", hl.dsp.focus({ direction = "up" }))
+hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
+
+-- Directional swap (dwindle / master)
+hl.bind(mainMod .. " + SHIFT + h", hl.dsp.window.swap({ direction = "l" }))
+hl.bind(mainMod .. " + SHIFT + j", hl.dsp.window.swap({ direction = "d" }))
+hl.bind(mainMod .. " + SHIFT + k", hl.dsp.window.swap({ direction = "u" }))
+hl.bind(mainMod .. " + SHIFT + l", hl.dsp.window.swap({ direction = "r" }))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
