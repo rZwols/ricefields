@@ -15,6 +15,7 @@
         "hyprland/workspaces",
     ],
     "modules-right": [
+        "wireplumber",
         "battery",
         "custom/power",
     ],
@@ -25,8 +26,8 @@
     },
 
     "clock": {
-        "format-alt": "󰥔\n{:%I\n%M\n%p}",
-        "format": "󰥔\n{:%H\n%M}",
+        "format": "󰥔\n{:%I\n%M\n%p}",
+        "format-alt": "󰥔\n{:%H\n%M}",
         "interval": 1,
         "justify": "center",
     },
@@ -34,6 +35,13 @@
     "hyprland/workspaces": {
         "format": "{icon}",
         "on-click": "activate",
+    },
+
+    "wireplumber": {
+        "format": "\n{volume}",
+        "format-muted": "\n0",    
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     },
 
     "battery": {
