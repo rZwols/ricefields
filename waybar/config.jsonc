@@ -26,8 +26,8 @@
     },
 
     "clock": {
-        "format": "󰥔\n{:%I\n%M\n%p}",
-        "format-alt": "󰥔\n{:%H\n%M}",
+        "format": " 󰥔 \n{:%I\n%M\n%p}",
+        "format-alt": " 󰥔 \n{:%H\n%M}",
         "interval": 1,
         "justify": "center",
     },
@@ -38,16 +38,17 @@
     },
 
     "wireplumber": {
-        "format": "\n{volume}",
-        "format-muted": "\n0",    
+        "format": " \n{volume}",
+        "format-muted": " \n0",    
         "scroll-step": 5,
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "justify": "center",
     },
 
     "battery": {
 	    "interval": 5,
         "states": {
-            "good": 75,
+            "good": 60,
             "warning": 30,
             "critical": 20
         },
@@ -55,7 +56,7 @@
         "format-charging": "\n{capacity}",
         "format-plugged": "\n{capacity}",
         "format-alt": "{time}",
-        "format-icons": ["", "", "", "", ""],
+        "format-icons": ["  ", "  ", "  ", "  ", "  "],
 
         "justify": "center",
     },
